@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Autofunk: an Inference-Based Formal Model Generation Framework for Production Systems | William Durand</title>
+        <title>Autofunk, a fast and scalable framework for building formal models from production systems | William Durand</title>
 
         <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
@@ -29,8 +29,8 @@
         <div class="reveal">
             <div class="slides">
                 <section data-background="images/title-bg.jpg">
-                    <h1 class="title">Autofunk: an Inference-Based Formal Model Generation<br>Framework for [Michelin] Production Systems.</h1>
-                    <em class="subtitle"><u>William Durand</u>, Sébastien Salva &mdash; June 25, 2015 / FM'15</em>
+                    <h1 class="title">Autofunk, a fast and scalable framework for building formal models from [Michelin] production systems.</h1>
+                    <em class="subtitle">Sébastien Salva, <u>William Durand</u> &mdash; July 1st, 2015 / DEBS'15</em>
                 </section>
 
                 <section data-background="images/chaine-des-puys.jpg"></section>
@@ -60,7 +60,7 @@
                     <section data-markdown>
                         <script type="text/template">
                             Software exchange _information_ with points and machines
-                            by sending and receiving **production messages**.
+                            by sending and receiving **production events**.
 
                             <br>
 
@@ -71,22 +71,24 @@
 
                             17-Jun-2015 23:29:59.70|17011|MSG_IN  [pid: 2] [nsec: 8] [point: 2] ...
                             ```
+
+                            <small>An example of events in a human readable format</small>
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            **Production messages** are exchanged in a binary
+                            **Production events** are exchanged in a binary
                             format (custom protocols), through **centralized**
-                            messaging systems.
+                            exchanging systems.
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            Each production message is tied to a **product** (e.g. tire),<br>identified
+                            Each production event is tied to a **product** (e.g. tire),<br>identified
                             by a **product identifier** (`pid`).
 
                             <br>
-                            Gathering all production messages related to a product<br>allows
+                            Gathering all production events related to a product<br>allows
                             to retrieve **what happened** to it.
                         </script>
                     </section>
@@ -140,8 +142,8 @@
                             ### Our Approach
                             <br>
 
-                            By leveraging the information found in the
-                            production messages, we build **formal and exact
+                            By leveraging the information carried by the
+                            production events, we build **formal and exact
                             models** (STS) that describe functional behaviours
                             of a production system under analysis.
                         </script>
@@ -180,7 +182,7 @@
                             ### Experimentation
                             <br>
 
-                            10 million production messages (20 days)
+                            10 million production events (20 days)
 
                             <i class="fa fa-arrow-down"></i>
 
@@ -232,7 +234,7 @@
                             <br>
 
                             * **Fast** and **efficient** technique to infer formal models
-                            * The more production messages, the better!
+                            * The more production events, the better!
                             * But a few technical issues to tackle (memory<br>consumption for instance)
                         </script>
                     </section>
